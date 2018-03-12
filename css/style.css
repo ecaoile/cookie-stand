@@ -1,0 +1,10 @@
+strong {
+  font-family: 'Roboto', sans-serif;
+  font-size:24px;
+  line-height:40px;
+}
+
+li {
+  text-indent:30px;
+  line-height:20px;
+}
