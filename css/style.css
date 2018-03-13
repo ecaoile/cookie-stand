@@ -7,4 +7,9 @@ strong {
 li {
   text-indent:30px;
   line-height:20px;
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  font-family: 'Noto Serif', serif;
 }
