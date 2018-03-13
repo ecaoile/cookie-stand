@@ -10,11 +10,11 @@ h1 {
   text-align:center;
 }
 
-strong {
+h2.salesLoc {
   font-family: 'Roboto', sans-serif;
+  color: #00592F;
   font-size:24px;
   line-height:40px;
-  color: #00592F;
 }
 
 li {
@@ -37,7 +37,7 @@ p#construction {
   color: #C0015A;
 }
 
-h2 {
+h2#contact {
   font-family: 'Noto Serif', serif;
   font-size: 18px;
   color: #3E0008;
