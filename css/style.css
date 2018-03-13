@@ -5,11 +5,17 @@ strong {
 }
 
 li {
-  text-indent:30px;
+  margin-left:30px;
   line-height:20px;
   font-family: 'Lato', sans-serif;
+  list-style-type: circle;
 }
 
 p {
   font-family: 'Noto Serif', serif;
+}
+
+div.shopSales {
+  float: left;
+  width: 20%;
 }
