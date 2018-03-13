@@ -31,6 +31,12 @@ p {
   line-height: 20px;
 }
 
+p#construction {
+  text-align: center;
+  line-height: 20px;
+  color: #C0015A;
+}
+
 h2 {
   font-family: 'Noto Serif', serif;
   font-size: 18px;
@@ -56,6 +62,5 @@ div.shopSales {
 
 #info {
   position: relative;
-  padding: 500px 0px 20px 50px;
-  
+  margin: 175px 0px 20px 50px;
 }
