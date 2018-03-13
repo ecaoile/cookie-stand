@@ -64,3 +64,14 @@ div.shopSales {
   position: relative;
   margin: 175px 0px 20px 50px;
 }
+
+th, tr, td {
+  border: 2px solid #757575;
+  padding: 10px;
+  border-spacing: 50px;
+}
+
+table {
+  border: 5px solid #757575;
+  background-color: #CEE8FE;
+}
