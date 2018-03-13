@@ -1,6 +1,15 @@
 body {
   background: #CEFEE3;
 }
+
+h1 {
+  font-family: 'Noto Serif', serif;
+  color: #3E0008;
+  font-size:32px;
+  line-height:60px;
+  text-align:center;
+}
+
 strong {
   font-family: 'Roboto', sans-serif;
   font-size:24px;
@@ -18,8 +27,16 @@ li {
 
 p {
   font-family: 'Noto Serif', serif;
+  color:#3E0008;
+  line-height: 20px;
 }
 
+h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  color: #3E0008;
+  line-height:30px;
+}
 div.shopSales {
   background-color: #CEE8FE;
   float: left;
@@ -27,4 +44,18 @@ div.shopSales {
   margin:10px;
   padding:10px;
   border: 5px solid #757575;
+}
+
+#mainSalmon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  padding: 30px;
+}
+
+#info {
+  position: relative;
+  padding: 500px 0px 20px 50px;
+  
 }
