@@ -43,7 +43,7 @@ Store.prototype.render = function() {
 
   // make td for other fields
   for (var i = 0; i < storeHours.length; i++) {
-    if (this.hourlyCookiesArray.length === 0) {
+    if (this.hourlyCookiesArray.length < storeHours.length) {
       this.hourlyCookiesCalc = Math.floor((Math.random() * (this.maxCust - this.minCust) + this.minCust) * this.avgCookiesPerSale);
     }
     tdElement = document.createElement('td');
