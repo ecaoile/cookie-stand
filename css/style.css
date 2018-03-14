@@ -78,3 +78,37 @@ th:first-child, tr:first-child {
   background-color: #CAD9EC;
 }
 
+form#store-form {
+  margin: 50px;
+}
+
+legend, label {
+  font-family: 'Noto Serif', serif;
+  color:#3E0008;
+  font-size: 14px;
+}
+
+legend {
+  line-height: 40px;
+  font-size: 16px;
+}
+
+[name~="minCust"], [name~="maxCust"] {
+  width: 70px;
+}
+
+input {
+  margin-right: 20px;
+
+}
+form {
+  border: 5px solid #757575;
+  background-color: #EFF6FE;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
