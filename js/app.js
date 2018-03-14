@@ -1,9 +1,9 @@
 'use strict';
 
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var hours = ['6:00am', '7am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'total'];
 var allStores = [];
 var storeTable = document.getElementById('stores');
-
+var totalOfTotals = 0;
 function Store (location, minCust, maxCust, avgCookiePerSale) {
   this.location = location;
   this.minCust = minCust;
@@ -38,6 +38,7 @@ Store.prototype.render = function() {
     this.hourlyCookiesArray.push(this.hourlyCookiesCalc);
     trElement.appendChild(tdElement);
     this.totalCookies += this.hourlyCookiesCalc;
+    totalOfTotals += this.hourlyCookiesCalc;
   }
   tdElement.textContent = this.totalCookies;
   trElement.appendChild(tdElement);
@@ -65,15 +66,20 @@ function makeTotalsRow() {
   thElement.textContent = 'Totals';
   totalTrElement.appendChild(thElement);
   // cells for totals per each hour
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < hours.length-1; i++) {
     var hourlyTotal = 0;
     var tdElement = document.createElement('td');
-    for (var j = 0; j < allStores.length; j++) {
+    for (var j = 0; j < allStores.length - 1; j++) {
       hourlyTotal += allStores[j].hourlyCookiesArray[i];
     }
     tdElement.textContent = hourlyTotal;
     totalTrElement.appendChild(tdElement);
   }
+
+  // cell for total of totals
+  tdElement = document.createElement('td');
+  tdElement.textContent = totalOfTotals;
+  totalTrElement.appendChild(tdElement);
 
   storeTable.appendChild(totalTrElement);
 }
