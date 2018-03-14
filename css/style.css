@@ -28,14 +28,6 @@ h2#contact {
   color: #3E0008;
   line-height:30px;
 }
-div.shopSales {
-  background-color: #CEE8FE;
-  float: left;
-  width: 15%;
-  margin:10px;
-  padding:10px;
-  border: 5px solid #757575;
-}
 
 #mainSalmon {
   display: block;
@@ -58,7 +50,7 @@ th, tr, td {
 
 table {
   border: 5px solid #757575;
-  background-color: #CEE8FE;
+  background-color: #EFF6FE;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -77,3 +69,12 @@ th.salesLoc {
   color: #00592F;
   font-size:16px;
 }
+
+tr:nth-child(even) {
+  background-color: #CEE8FE;
+}
+
+th:first-child, tr:first-child {
+  background-color: #CAD9EC;
+}
+
