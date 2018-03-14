@@ -9,7 +9,6 @@ var storeForm = document.getElementById('store-form');
 // A few variables we're going to delcare in the beginning
 var storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 var allStores = [];
-var totalOfTotals = 0;
 
 // A constructor for our store objects
 function Store (location, minCust, maxCust, avgCookiesPerSale) {
@@ -24,6 +23,8 @@ function Store (location, minCust, maxCust, avgCookiesPerSale) {
 
 // Render the stores in the table
 Store.prototype.render = function() {
+  // initialize totalCookies to 0
+  this.totalCookies = 0;
   // create tr
   var trElement = document.createElement('tr');
 
@@ -42,7 +43,9 @@ Store.prototype.render = function() {
 
   // make td for other fields
   for (var i = 0; i < storeHours.length; i++) {
-    this.hourlyCookiesCalc = Math.floor((Math.random() * (this.maxCust - this.minCust) + this.minCust) * this.avgCookiesPerSale);
+    if (this.hourlyCookiesArray.length === 0) {
+      this.hourlyCookiesCalc = Math.floor((Math.random() * (this.maxCust - this.minCust) + this.minCust) * this.avgCookiesPerSale);
+    }
     tdElement = document.createElement('td');
     tdElement.textContent = this.hourlyCookiesCalc;
     this.hourlyCookiesArray.push(this.hourlyCookiesCalc);
@@ -85,6 +88,7 @@ function makeHeaderRow() {
 }
 
 function makeTotalsRow() {
+  var totalOfTotals = 0;
   // cell for Totals: string
   var totalTrElement = document.createElement('tr');
   var thElement = document.createElement('th');
