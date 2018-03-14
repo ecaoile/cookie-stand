@@ -74,4 +74,7 @@ th, tr, td {
 table {
   border: 5px solid #757575;
   background-color: #CEE8FE;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
