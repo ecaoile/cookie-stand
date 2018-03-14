@@ -39,9 +39,8 @@ Store.prototype.render = function() {
     this.hourlyCookiesArray.push(this.hourlyCookiesCalc);
     trElement.appendChild(tdElement);
     this.totalCookies += this.hourlyCookiesCalc;
-    //totalOfTotals += this.hourlyCookiesCalc;
   }
-  
+
   // make td for daily location total
   tdElement = document.createElement('td');
   tdElement.textContent = this.totalCookies;
@@ -76,7 +75,7 @@ function makeTotalsRow() {
   var thElement = document.createElement('th');
   thElement.textContent = 'Totals';
   totalTrElement.appendChild(thElement);
-  
+
   // cells for totals per hour from all locations combined
   for (var i = 0; i < storeHours.length; i++) {
     var hourlyTotal = 0;
