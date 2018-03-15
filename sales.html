@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pat's Salmon Cookies</title>
+        <title>Pat's Salmon Cookies - Sales Information</title>
         <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Serif|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
@@ -10,6 +10,26 @@
     <body>
         <h1>Sales Information</h1>
         <table id="stores"></table>
+
+        <form id="store-form">
+          <fieldset>
+            <legend>Add a New Store</legend>
+
+            <label for="storeLoc">Location:</label>
+            <input type="text" name="storeLoc">
+
+            <label for="minCust">Minimum Hourly Customers:</label>
+            <input type="number" name="minCust" width="5">
+
+            <label for="maxCust">Maximum Hourly Customers:</label>
+            <input type="number" name="maxCust">
+
+            <label for="avgCookiesPerSale">Average Cookies per Sale:</label>
+            <input type="number" name="avgCookiesPerSale">
+
+            <button>Add a Store</button>
+          </fieldset>
+        </form>
 
         <script src="js/app.js"></script>
     </body>
