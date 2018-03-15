@@ -126,6 +126,7 @@ function addNewStore(event) {
   event.preventDefault();
   var filledBox = true;
   var positiveInt = true;
+  var noDuplicateLoc = true;
   var newLoc = event.target.storeLoc.value;
   var newMinCust = event.target.minCust.value;
   var newMaxCust = event.target.maxCust.value;
@@ -144,6 +145,8 @@ function addNewStore(event) {
   newMinCust = parseInt(newMinCust);
   newMaxCust = parseInt(newMaxCust);
   newAvgCookiesPerSale = parseInt(newAvgCookiesPerSale);
+
+  // For some reason, I have to do this again for the numbers to be stored in newValues as integers. Please help me think of a more elegeant solution.
   newValues = [newLoc, newMinCust, newMaxCust, newAvgCookiesPerSale];
 
   console.log(newMinCust);
@@ -155,12 +158,22 @@ function addNewStore(event) {
   if (filledBox === false) {
     alert('You left a field blank. Please enter a value.');
   }
-  if (newMinCust < 0 || newMaxCust < 0 || newAvgCookiesPerSale < 0) {
-    positiveInt = false;
-    alert('You have a negative integer. Please enter a positive integer');
+
+  for (i = 1; i < newValues.length; i++) {
+    if (newValues[i] < 0) {
+      positiveInt = false;
+      alert('You have a negative integer. Please enter a positive integer');
+    }
   }
 
-  if (filledBox === true && positiveInt === true) {
+  for (i = 0; i < allStores.length; i++)
+  {
+    if (allStores[i].location === newLoc) {
+      noDuplicateLoc = false;
+      alert('That location already exists! Please enter a new location.');
+    }
+  }
+  if (filledBox === true && positiveInt === true && noDuplicateLoc === true) {
     new Store(newLoc, newMinCust, newMaxCust, newAvgCookiesPerSale);
     storeTable.innerHTML = '';
     makeHeaderRow();
@@ -168,13 +181,6 @@ function addNewStore(event) {
     makeTotalsRow();
   }
 }
-/*
-var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
-var seaTac = new Store('SeaTac', 3, 24, 1.2);
-var seaCent = new Store('Seattle Center', 11, 38, 3.7);
-var capHill = new Store('Capitol Hill', 20, 38, 2.3);
-var alki = new Store('Alki', 2, 16, 4.6);
-*/
 
 // add event listener
 storeForm.addEventListener('submit', addNewStore);
@@ -182,11 +188,4 @@ storeForm.addEventListener('submit', addNewStore);
 // call functions
 makeHeaderRow();
 renderAllStores();
-/*
-firstAndPike.render();
-seaTac.render();
-seaCent.render();
-capHill.render();
-alki.render();
-*/
 makeTotalsRow();
