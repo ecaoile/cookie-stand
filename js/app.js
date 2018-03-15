@@ -43,14 +43,14 @@ Store.prototype.render = function() {
 
   // make td for other fields
   for (var i = 0; i < storeHours.length; i++) {
-    if (this.hourlyCookiesArray.length < storeHours.length) {
-      this.hourlyCookiesCalc = Math.floor((Math.random() * (this.maxCust - this.minCust) + this.minCust) * this.avgCookiesPerSale);
-    }
-    tdElement = document.createElement('td');
-    tdElement.textContent = this.hourlyCookiesCalc;
+    this.hourlyCookiesCalc = Math.floor((Math.random() * (this.maxCust - this.minCust) + this.minCust) * this.avgCookiesPerSale);
     this.hourlyCookiesArray.push(this.hourlyCookiesCalc);
+
+    tdElement = document.createElement('td');
+    tdElement.textContent = this.hourlyCookiesArray[i];
     trElement.appendChild(tdElement);
-    this.totalCookies += this.hourlyCookiesCalc;
+    this.totalCookies += this.hourlyCookiesArray[i];
+    console.log(this.totalCookies);
   }
 
   // make td for daily location total
@@ -101,6 +101,7 @@ function makeTotalsRow() {
     var tdElement = document.createElement('td');
     for (var j = 0; j < allStores.length; j++) {
       hourlyTotal += allStores[j].hourlyCookiesArray[i];
+      console.log(allStores);
     }
     tdElement.textContent = hourlyTotal;
     totalOfTotals += hourlyTotal;
@@ -123,17 +124,49 @@ function renderAllStores() {
 
 function addNewStore(event) {
   event.preventDefault();
+  var filledBox = true;
+  var positiveInt = true;
   var newLoc = event.target.storeLoc.value;
   var newMinCust = event.target.minCust.value;
   var newMaxCust = event.target.maxCust.value;
   var newAvgCookiesPerSale = event.target.avgCookiesPerSale.value;
 
-  new Store(newLoc, newMinCust, newMaxCust, newAvgCookiesPerSale);
+  // takes the above variables and places them in an array
+  var newValues = [newLoc, newMinCust, newMaxCust, newAvgCookiesPerSale];
 
-  storeTable.innerHTML = '';
-  makeHeaderRow();
-  renderAllStores();
-  makeTotalsRow();
+  // goes through the array and looks for blanks
+  for (var i = 0; i < newValues.length; i ++) {
+    if (newValues[i] === '') {
+      filledBox = false;
+    }
+  }
+  // turns numbers into integers
+  newMinCust = parseInt(newMinCust);
+  newMaxCust = parseInt(newMaxCust);
+  newAvgCookiesPerSale = parseInt(newAvgCookiesPerSale);
+  newValues = [newLoc, newMinCust, newMaxCust, newAvgCookiesPerSale];
+
+  console.log(newMinCust);
+  console.log(newMaxCust);
+  console.log(newAvgCookiesPerSale);
+  console.log(newValues);
+
+  // checks for valid input before continuing with the creation of a new object
+  if (filledBox === false) {
+    alert('You left a field blank. Please enter a value.');
+  }
+  if (newMinCust < 0 || newMaxCust < 0 || newAvgCookiesPerSale < 0) {
+    positiveInt = false;
+    alert('You have a negative integer. Please enter a positive integer');
+  }
+
+  if (filledBox === true && positiveInt === true) {
+    new Store(newLoc, newMinCust, newMaxCust, newAvgCookiesPerSale);
+    storeTable.innerHTML = '';
+    makeHeaderRow();
+    renderAllStores();
+    makeTotalsRow();
+  }
 }
 /*
 var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);

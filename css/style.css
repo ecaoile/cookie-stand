@@ -93,7 +93,7 @@ legend {
   font-size: 16px;
 }
 
-[name~="minCust"], [name~="maxCust"] {
+[type~="number"] {
   width: 70px;
 }
 
