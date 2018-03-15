@@ -3,29 +3,29 @@ body {
 }
 
 h1 {
-  font-family: 'Noto Serif', serif;
   color: #3E0008;
+  font-family: 'Noto Serif', serif;
   font-size:32px;
   line-height:60px;
   text-align:center;
 }
 
 p {
-  font-family: 'Noto Serif', serif;
   color:#3E0008;
+  font-family: 'Noto Serif', serif;
   line-height: 20px;
 }
 
 p#construction {
-  text-align: center;
-  line-height: 20px;
   color: #C0015A;
+  line-height: 20px;
+  text-align: center;
 }
 
 h2#contact {
+  color: #3E0008;
   font-family: 'Noto Serif', serif;
   font-size: 18px;
-  color: #3E0008;
   line-height:30px;
 }
 
@@ -33,19 +33,19 @@ h2#contact {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
   padding: 30px;
+  width: 40%;
 }
 
 #info {
-  position: relative;
   margin: 175px 0px 20px 50px;
+  position: relative;
 }
 
 th, tr, td {
   border: 2px solid #757575;
-  padding: 10px;
   border-spacing: 50px;
+  padding: 10px;
 }
 
 table {
@@ -59,23 +59,35 @@ table {
 /* unique font for data */
 td  {
   font-family: 'Lato', sans-serif;
-  font-size: 14px;
+  font-size: .9em;
   color: #3E0059;
+}
+
+th {
+  color:#3E0008;
+  font-family: 'Noto Serif', serif;
+  font-size:.9em;
 }
 
 /* unique font for locations */
 th.salesLoc {
-  font-family: 'Roboto', sans-serif;
   color: #00592F;
-  font-size:16px;
+  font-family: 'Roboto', sans-serif;
+  font-size:1em;
 }
 
+/* alternating colors for data rows */
 tr:nth-child(even) {
   background-color: #CEE8FE;
 }
 
-th:first-child, tr:first-child {
+th, tr:first-child {
   background-color: #CAD9EC;
+}
+
+/* highlights selected data cells */
+td:hover {
+  background-color: #ccffff;
 }
 
 form#store-form {
@@ -102,7 +114,7 @@ input {
 
 }
 form {
-  border: 5px solid #757575;
+  border: 3px solid #757575;
   background-color: #EFF6FE;
   margin-left: auto;
   margin-right: auto;
