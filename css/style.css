@@ -18,10 +18,6 @@ h2 {
   line-height: 2em;
 }
 
-h2#for-sale {
-  margin-left: 1em;
-}
-
 p {
   color:#3E0008;
   font-family: 'Noto Serif', serif;
@@ -39,14 +35,6 @@ h2#contact {
   line-height:30px;
 }
 
-#mainSalmon {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
-  width: 40%;
-}
-
 #info {
   margin: 175px 0px 20px 50px;
   position: relative;
@@ -55,12 +43,12 @@ h2#contact {
 th, tr, td {
   border: 2px solid #757575;
   border-spacing: 50px;
-  padding: 10px;
+  padding: .75em;
 }
 
 table {
-  border: 5px solid #757575;
   background-color: #EFF6FE;
+  border: 5px solid #757575;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -144,14 +132,16 @@ body {
 }
 
 .deck {
-  border: 5px solid #757575;
+  box-shadow: 1px 3px 10px 0px #000;
   background-color: #EFF6FE;
-  box-shadow: 1px 1px 1px 1px #444;
   margin:1em;
 }
 
+/* code for box shadow taken from https://www.cssmatic.com/box-shadow */
 .card {
-  border:1px solid #ccc;
+  webkit-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
+  box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
   display:table-cell;
   border-spacing:.5em;
   padding:0;
@@ -238,13 +228,6 @@ body {
   width:65%;
 }
 
-.card.media-left figure {
-  float:left;
-  margin:1em;
-  width:45%;
-}
-
-
 .standalone-box {
   float: left;
 }
@@ -254,9 +237,14 @@ body {
   margin-right:10%;
 }
 
-
+#merch-list img {
+  max-width:100%;
+  height:auto;
+  padding-left:1em;
+  padding-right:1em;
+}
 .standalone-box:last-child {
-  margin-right:6.25em;
+  margin-right:.6em;
 }
 
 #bottom {
