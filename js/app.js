@@ -74,9 +74,9 @@ function makeHeaderRow() {
   headerTrElement.appendChild(thElement);
 
   for (var i = 0; i < storeHours.length; i++) {
-    var tdElement = document.createElement('td');
-    tdElement.textContent = storeHours[i];
-    headerTrElement.appendChild(tdElement);
+    thElement = document.createElement('th');
+    thElement.textContent = storeHours[i];
+    headerTrElement.appendChild(thElement);
   }
 
   // make daily totals cell
@@ -149,30 +149,27 @@ function addNewStore(event) {
   // For some reason, I have to do this again for the numbers to be stored in newValues as integers. Please help me think of a more elegeant solution.
   newValues = [newLoc, newMinCust, newMaxCust, newAvgCookiesPerSale];
 
-  console.log(newMinCust);
-  console.log(newMaxCust);
-  console.log(newAvgCookiesPerSale);
-  console.log(newValues);
-
   // checks for valid input before continuing with the creation of a new object
   if (filledBox === false) {
-    alert('You left a field blank. Please enter a value.');
+    alert('You left a field blank! Please enter a value.');
   }
 
   for (i = 1; i < newValues.length; i++) {
     if (newValues[i] < 0) {
       positiveInt = false;
-      alert('You have a negative integer. Please enter a positive integer');
+      alert('You have a negative integer! Please enter a positive integer');
     }
   }
 
   for (i = 0; i < allStores.length; i++)
   {
-    if (allStores[i].location === newLoc) {
+    if (allStores[i].location.toLowerCase() === newLoc.toLowerCase()) {
       noDuplicateLoc = false;
       alert('That location already exists! Please enter a new location.');
     }
   }
+
+  // recreates table with new store if input is valid
   if (filledBox === true && positiveInt === true && noDuplicateLoc === true) {
     new Store(newLoc, newMinCust, newMaxCust, newAvgCookiesPerSale);
     storeTable.innerHTML = '';

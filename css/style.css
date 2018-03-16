@@ -2,30 +2,40 @@ body {
   background: #CEFEE3;
 }
 
-h1 {
-  font-family: 'Noto Serif', serif;
+h1, h2, p {
   color: #3E0008;
-  font-size:32px;
-  line-height:60px;
+  font-family: 'Noto Serif', serif;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 2em;
   text-align:center;
 }
 
+h2 {
+  font-size:24px;
+  line-height: 2em;
+}
+
+h2#for-sale {
+  margin-left: 1em;
+}
+
 p {
-  font-family: 'Noto Serif', serif;
   color:#3E0008;
+  font-family: 'Noto Serif', serif;
   line-height: 20px;
 }
 
 p#construction {
-  text-align: center;
-  line-height: 20px;
   color: #C0015A;
+  line-height: 20px;
+  text-align: center;
 }
 
 h2#contact {
-  font-family: 'Noto Serif', serif;
   font-size: 18px;
-  color: #3E0008;
   line-height:30px;
 }
 
@@ -33,19 +43,19 @@ h2#contact {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
   padding: 30px;
+  width: 40%;
 }
 
 #info {
-  position: relative;
   margin: 175px 0px 20px 50px;
+  position: relative;
 }
 
 th, tr, td {
   border: 2px solid #757575;
-  padding: 10px;
   border-spacing: 50px;
+  padding: 10px;
 }
 
 table {
@@ -59,23 +69,35 @@ table {
 /* unique font for data */
 td  {
   font-family: 'Lato', sans-serif;
-  font-size: 14px;
+  font-size: .9em;
   color: #3E0059;
+}
+
+th {
+  color:#3E0008;
+  font-family: 'Noto Serif', serif;
+  font-size:.9em;
 }
 
 /* unique font for locations */
 th.salesLoc {
-  font-family: 'Roboto', sans-serif;
   color: #00592F;
-  font-size:16px;
+  font-family: 'Roboto', sans-serif;
+  font-size:1em;
 }
 
+/* alternating colors for data rows */
 tr:nth-child(even) {
   background-color: #CEE8FE;
 }
 
-th:first-child, tr:first-child {
+th, tr:first-child {
   background-color: #CAD9EC;
+}
+
+/* highlights selected data cells */
+td:hover {
+  background-color: #ccffff;
 }
 
 form#store-form {
@@ -102,13 +124,155 @@ input {
 
 }
 form {
-  border: 5px solid #757575;
+  border: 3px solid #757575;
   background-color: #EFF6FE;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
 }
 
-button {
+form button {
   margin-top: 10px;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  font-family:'helvetica nueue', arial;
+}
+
+.deck {
+  border: 5px solid #757575;
+  background-color: #EFF6FE;
+  box-shadow: 1px 1px 1px 1px #444;
+  margin:1em;
+}
+
+.card {
+  border:1px solid #ccc;
+  display:table-cell;
+  border-spacing:.5em;
+  padding:0;
+  position:relative;
+}
+
+.card:nth-child(2) {
+  margin:.5em 0;
+}
+
+.card header {
+  background-color: #CAD9EC;
+  color: #00592F;
+  font-family: 'Roboto', sans-serif;
+  font-size:1.75em;
+  font-weight:bold;
+  padding:.25em;
+}
+
+.card figure {
+  display:block;
+  margin:1.5em auto;
+  text-align: center;
+}
+
+.card figure figcaption {
+  padding:.5em;
+  text-align:center;
+}
+
+.card figure img {
+  max-width:90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card p {
+  margin-bottom:4em;
+}
+
+.card .links {
+  bottom:0;
+  position:absolute;
+  width:100%;
+}
+.card .links a {
+  text-decoration:none;
+}
+.card .links .primary {
+  background:#800000;
+  border-radius: 6px;
+  color:#fff;
+  float:right;
+  margin:1em;
+  padding:.75em;
+}
+
+.card .links .primary:hover {
+  background:red;
+}
+
+.card .links .secondary {
+  background:#eee;
+  border-radius: 6px;
+  color:#000;
+  float:left;
+  margin:1em;
+  padding:.5em;
+}
+
+.card .links .secondary:hover {
+  background:#ccc;
+}
+
+.card.stacked p {
+  padding:1em;
+}
+
+.card.stacked figure#salmon-pic {
+  width:100%;
+}
+
+.card.stacked figure#family-pic {
+  width:65%;
+}
+
+.card.media-left figure {
+  float:left;
+  margin:1em;
+  width:45%;
+}
+
+
+.standalone-box {
+  float: left;
+}
+
+#merch-list {
+  margin-left:10%;
+  margin-right:10%;
+}
+
+
+.standalone-box:last-child {
+  margin-right:6.25em;
+}
+
+#bottom {
+  background-image:url('../images/fish.jpg');
+  padding-bottom:1em;
+  padding-top:1em;
+}
+
+div#contact {
+  background: #CEFEE3;  
+  margin-left:5%;
+  padding:.5%;
+  text-align:center;
+  width:10em;
+}
+
+#contact h2 {
+  text-decoration: underline;
 }
