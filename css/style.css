@@ -6,6 +6,7 @@ h1, h2, p {
   color: #3E0008;
   font-family: 'Noto Serif', serif;
 }
+
 h1 {
   font-size: 2em;
   line-height: 2em;
@@ -20,6 +21,7 @@ h2 {
 h2#for-sale {
   margin-left: 1em;
 }
+
 p {
   color:#3E0008;
   font-family: 'Noto Serif', serif;
@@ -165,7 +167,7 @@ body {
   color: #00592F;
   font-family: 'Roboto', sans-serif;
   font-size:1.75em;
-   font-weight:bold;
+  font-weight:bold;
   padding:.25em;
 }
 
@@ -240,17 +242,6 @@ body {
   float:left;
   margin:1em;
   width:45%;
-  
-}
-
-.card.media-left p {
-  margin:1em;
-}
-
-.card.media-left p:after {
-  content:'';
-  clear:both;
-  display:table;
 }
 
 
@@ -263,26 +254,25 @@ body {
   margin-right:10%;
 }
 
+
 .standalone-box:last-child {
   margin-right:6.25em;
 }
 
 #bottom {
-  background-image:url("../images/fish.jpg");
-  padding: 2em 0 2em 0;
+  background-image:url('../images/fish.jpg');
+  padding-bottom:1em;
+  padding-top:1em;
 }
 
 div#contact {
-  background: #CEFEE3;
-  width: 10em;
-  margin-left: 5%;
-}
-/*
-div#merch-list {
-  position: absolute;
+  background: #CEFEE3;  
+  margin-left:5%;
+  padding:.5%;
+  text-align:center;
+  width:10em;
 }
 
-div#merch-list > img {
-  position: relative;
-  padding: 20px;
-}*/
+#contact h2 {
+  text-decoration: underline;
+}
