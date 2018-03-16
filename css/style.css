@@ -269,6 +269,7 @@ body {
 
 #bottom {
   background-image:url("../images/fish.jpg");
+  padding: 2em 0 2em 0;
 }
 
 div#contact {
