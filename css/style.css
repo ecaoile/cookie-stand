@@ -123,7 +123,7 @@ form {
 }
 
 form button {
-  margin-top: 10px;
+  margin-top: 1em;
 }
 
 * {
@@ -137,7 +137,7 @@ body {
 .deck {
   box-shadow: 1px 3px 10px 0px #000;
   background-color: #EFF6FE;
-  margin:1em;
+  margin:2em;
 }
 
 /* code for box shadow taken from https://www.cssmatic.com/box-shadow */
@@ -236,6 +236,7 @@ body {
 }
 
 #merch-list {
+  margin-top:5em;
   margin-left:10%;
   margin-right:10%;
 }
@@ -248,7 +249,7 @@ body {
 }
 
 .standalone-box:last-child {
-  margin-right:.6em;
+  margin-right:1em;
 }
 
 #bottom {
@@ -259,10 +260,13 @@ body {
 
 div#contact {
   background: #CEFEE3;  
+  box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);  
   margin-left:5%;
   padding:.5%;
   text-align:center;
   width:10em;
+  -moz-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
+
 }
 
 #contact h2 {
@@ -278,7 +282,8 @@ nav ul, div#index-title {
   padding: 0;
   overflow: hidden;
   top: 0;
-  width: 50%;  
+  width: 50%;
+    
 }
 
 div#index-title {
@@ -289,9 +294,11 @@ div#index-title {
 div#index-title h1, nav li a {
   padding: 14px 16px;
 }
+
+/* This is some "strategery" I came up with to keep the h1 text centered vertically. It looks trashy, but it works. */
 div#index-title h1 {
   color: white;
-  line-height:.5em;
+  margin: -8px 0 -8px 0;
 }
 
 nav ul {
