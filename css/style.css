@@ -9,6 +9,9 @@ h1, h2, p, figcaption {
 
 h1 {
   font-size: 2em;
+}
+
+div#sales-title h1 {
   line-height: 2em;
   text-align:center;
 }
@@ -139,7 +142,7 @@ body {
 
 /* code for box shadow taken from https://www.cssmatic.com/box-shadow */
 .card {
-  webkit-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
+  /*webkit-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);*/
   -moz-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
   box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
   display:table-cell;
@@ -243,6 +246,7 @@ body {
   padding-left:1em;
   padding-right:1em;
 }
+
 .standalone-box:last-child {
   margin-right:.6em;
 }
@@ -263,4 +267,52 @@ div#contact {
 
 #contact h2 {
   text-decoration: underline;
+}
+
+/* styling for nav menu inspired by https://www.w3schools.com/css/css_navbar.asp */
+nav ul, div#index-title {
+  background-color: #333;
+  position: fixed;
+  z-index: 10;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+  width: 50%;  
+}
+
+div#index-title {
+  text-align: center;
+  width: 50%;
+}
+
+div#index-title h1, nav li a {
+  padding: 14px 16px;
+}
+div#index-title h1 {
+  color: white;
+  line-height:.5em;
+}
+
+nav ul {
+  margin-left:50%;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+nav .active {
+  background-color: #4CAF50;
 }
