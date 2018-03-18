@@ -9,6 +9,9 @@ h1, h2, p, figcaption {
 
 h1 {
   font-size: 2em;
+}
+
+div#sales-title h1 {
   line-height: 2em;
   text-align:center;
 }
@@ -18,20 +21,10 @@ h2 {
   line-height: 2em;
 }
 
-h2#for-sale {
-  margin-left: 1em;
-}
-
 p {
   color:#3E0008;
   font-family: 'Noto Serif', serif;
   line-height: 20px;
-}
-
-p#construction {
-  color: #C0015A;
-  line-height: 20px;
-  text-align: center;
 }
 
 h2#contact {
@@ -39,38 +32,25 @@ h2#contact {
   line-height:30px;
 }
 
-#mainSalmon {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
-  width: 40%;
-}
-
-#info {
-  margin: 175px 0px 20px 50px;
-  position: relative;
-}
-
 th, tr, td {
   border: 2px solid #757575;
   border-spacing: 50px;
-  padding: 10px;
+  padding: .75em;
 }
 
 table {
-  border: 5px solid #757575;
   background-color: #EFF6FE;
-  text-align: center;
+  border: 5px solid #757575;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 /* unique font for data */
 td  {
+  color: #3E0059;
   font-family: 'Lato', sans-serif;
   font-size: .9em;
-  color: #3E0059;
 }
 
 th {
@@ -105,14 +85,14 @@ form#store-form {
 }
 
 legend, label {
-  font-family: 'Noto Serif', serif;
   color:#3E0008;
+  font-family: 'Noto Serif', serif;
   font-size: 14px;
 }
 
 legend {
-  line-height: 40px;
   font-size: 16px;
+  line-height: 40px;
 }
 
 [type~="number"] {
@@ -121,7 +101,6 @@ legend {
 
 input {
   margin-right: 20px;
-
 }
 form {
   border: 3px solid #757575;
@@ -132,11 +111,7 @@ form {
 }
 
 form button {
-  margin-top: 10px;
-}
-
-* {
-  box-sizing:border-box;
+  margin-top: 1em;
 }
 
 body {
@@ -144,14 +119,16 @@ body {
 }
 
 .deck {
-  border: 5px solid #757575;
+  box-shadow: 1px 3px 10px 0px #000;
   background-color: #EFF6FE;
-  box-shadow: 1px 1px 1px 1px #444;
-  margin:1em;
+  margin:2em;
 }
 
+/* code for box shadow taken from https://www.cssmatic.com/box-shadow */
 .card {
-  border:1px solid #ccc;
+  /*webkit-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);*/
+  -moz-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
+  box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
   display:table-cell;
   border-spacing:.5em;
   padding:0;
@@ -197,34 +174,6 @@ body {
   position:absolute;
   width:100%;
 }
-.card .links a {
-  text-decoration:none;
-}
-.card .links .primary {
-  background:#800000;
-  border-radius: 6px;
-  color:#fff;
-  float:right;
-  margin:1em;
-  padding:.75em;
-}
-
-.card .links .primary:hover {
-  background:red;
-}
-
-.card .links .secondary {
-  background:#eee;
-  border-radius: 6px;
-  color:#000;
-  float:left;
-  margin:1em;
-  padding:.5em;
-}
-
-.card .links .secondary:hover {
-  background:#ccc;
-}
 
 .card.stacked p {
   padding:1em;
@@ -238,25 +187,25 @@ body {
   width:65%;
 }
 
-.card.media-left figure {
-  float:left;
-  margin:1em;
-  width:45%;
-}
-
-
 .standalone-box {
   float: left;
 }
 
 #merch-list {
+  margin-top:5em;
   margin-left:10%;
   margin-right:10%;
 }
 
+#merch-list img {
+  max-width:100%;
+  height:auto;
+  padding-left:1em;
+  padding-right:1em;
+}
 
 .standalone-box:last-child {
-  margin-right:6.25em;
+  margin-right:1em;
 }
 
 #bottom {
@@ -267,12 +216,66 @@ body {
 
 div#contact {
   background: #CEFEE3;  
+  box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);  
   margin-left:5%;
   padding:.5%;
   text-align:center;
   width:10em;
+  -moz-box-shadow: 4px 6px 5px 1px rgba(0,0,0,0.75);
+
 }
 
 #contact h2 {
   text-decoration: underline;
+}
+
+/* styling for nav menu inspired by https://www.w3schools.com/css/css_navbar.asp */
+nav ul, div#index-title {
+  background-color: #333;
+  position: fixed;
+  z-index: 10;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+  width: 50%;
+    
+}
+
+div#index-title {
+  text-align: center;
+  width: 50%;
+}
+
+div#index-title h1, nav li a {
+  padding: 14px 16px;
+}
+
+/* This is some "strategery" I came up with to keep the h1 text centered vertically. It looks trashy, but it works. */
+div#index-title h1 {
+  color: white;
+  margin: -8px 0 -8px 0;
+}
+
+nav ul {
+  margin-left:50%;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+nav .active {
+  background-color: #4CAF50;
 }
